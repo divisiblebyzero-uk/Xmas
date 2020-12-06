@@ -1,0 +1,33 @@
+<h2>Charades</h2>
+
+<div class="card" style="width: 100%;" *ngIf="charadesWord">
+    <div class="card-body">
+        <h2 class="card-title">Clue: {{charadesWord?.clue}}</h2>
+        <h1 class="card-title">The word: {{charadesWord?.theWord}}</h1>
+    </div>
+</div>
+
+<p>The rules</p>
+<ul>
+    <li>The players take turns to be the <b>actor</b> (play passes to the left).</li>
+    <li>Actor selects a random word using this website. If a word is presented which has already been used, click the button to get another word.</li>
+    <li>Actor has 30 seconds to prepare, and then:</li>
+    <ul>
+        <li>Reads aloud the Clue (category)</li>
+        <li>Acts out the FIRST syllable</li>
+        <li>Acts out the SECOND syllable</li>
+        <li>Acts out the WHOLE WORD</li>
+    </ul>
+    <li>After all the acting is complete, the remaining players can then guess what the full word is.</li>
+    <li>If someone guesses correctly, the actor congratulates them, and both the actor AND the guessor receive <b>five</b> points.</li>
+    <li>If no-one guesses correctly at first, the actor is allowed to re-enact all three mimes.</li>
+    <li>Notes:</li>
+    <ul>
+        <li>The actor is allowed to pass and select a new word, but must do this before begining the mime. Every skipped word costs one point.</li>
+        <li>The actor is expected to act in silence, but can make non-verbal sounds (such as barking to imply a dog), as long as this is not close to the syllable being acted out.</li>
+        <li>Some degree of artistic license is allowed in pronunciation (such as repetition of consonants eg Chick Ken for chicken).</li>
+    </ul>
+</ul>
+
+<button (click)="generateWord()" class="btn btn-primary" *ngIf="!charadesWord">Click here for a word</button>
+<button (click)="generateWord()" class="btn btn-primary" *ngIf="charadesWord">Click here for another word</button>
