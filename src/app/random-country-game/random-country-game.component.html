@@ -1,0 +1,62 @@
+<div class="container">
+    <h2>Random Country Game</h2>
+
+
+    <div class="container">
+        <label for="birth-month">What month were you born in:</label>
+        <input id="birth-month" type="text" class="form-control" [(ngModel)]="birthMonth" [ngbTypeahead]="searchMonths"/>
+    </div>
+    <div class="container" *ngIf="birthMonth">
+        <hr/>
+        <label for="favourite-colour">What is your favourite rainbow colour:</label>
+        <input id="favourite-colour" type="text" class="form-control" [(ngModel)]="favouriteColour" [ngbTypeahead]="searchColours"/>
+    </div>
+    <div class="container" *ngIf="favouriteColour">
+        <hr/>
+        <label for="middle-name">What is your middle name:</label>
+        <input id="middle-name" type="text" class="form-control" [(ngModel)]="middleName"/>
+    </div>
+    <div class="container" *ngIf="middleName">
+        <hr/>
+        <h4>Your answers</h4>
+        <div class="row">
+            <div class="col">
+                Birth month
+            </div>
+            <div class="col">
+                {{birthMonth}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Favourite Colour
+            </div>
+            <div class="col">
+                {{favouriteColour}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Middle Name
+            </div>
+            <div class="col">
+                {{middleName}}
+            </div>
+        </div>
+    </div>
+    <div class="container" *ngIf="middleName">
+        <div class="row" *ngIf="!country">
+            <div class="col">
+                <button class="btn btn-primary" (click)="generateCountryName()">Show me my random country</button>
+            </div>
+        </div>
+        <div class="row" *ngIf="country">
+            <div class="col">
+                <h4>Your country is:</h4>
+            </div>
+            <div class="col">
+                <h3>{{country.name}}</h3>
+            </div>
+        </div>
+    </div>
+</div>
