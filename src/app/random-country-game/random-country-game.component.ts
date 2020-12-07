@@ -258,9 +258,9 @@ const countries = [
 })
 export class RandomCountryGameComponent implements OnInit {
 
-  public birthMonth: any = "February";
-  public favouriteColour: any = "Violet";
-  public middleName: any = "James";
+  public birthMonth: any;
+  public favouriteColour: any;
+  public middleName: any;
 
   public country: any;
 
